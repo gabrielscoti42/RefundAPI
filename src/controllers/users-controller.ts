@@ -6,7 +6,7 @@ import { hash } from 'bcrypt';
 import { z } from 'zod';
 
 class UsersController {
-    async create(request: Request, response: Response): Promise<any> {
+    async create(request: Request, response: Response) {
         const bodySchema = z.object({
             name: z.string().nonempty().trim().min(2, {message: "Nome é obrigatório e deve ter no mínimo 2 caracteres"}),
             email: z.string().email({message: "E-mail inválido"}).trim().toLowerCase(),

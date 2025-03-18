@@ -7,7 +7,7 @@ import { compare } from "bcrypt";
 import { z } from "zod";
 
 class SessionsController {
-    async create(request: Request, response: Response): Promise<any> {
+    async create(request: Request, response: Response) {
         const bodySchema = z.object({
             email: z.string().email({message: "E-mail inválido"}),
             password: z.string()
